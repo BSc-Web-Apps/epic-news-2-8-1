@@ -1,4 +1,4 @@
-import { Link, NavLink } from '@remix-run/react'
+import { Link, NavLink } from 'react-router';
 import logo from '#app/assets/svg/icon-placeholder.svg'
 import { Button } from '#app/components/atoms/Button'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'

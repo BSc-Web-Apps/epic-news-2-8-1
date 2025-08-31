@@ -1,4 +1,4 @@
-import { Link } from '@remix-run/react'
+import { Link } from 'react-router';
 
 export enum ButtonTypes {
 	primary = `flex items-center justify-center rounded-md bg-primary px-4 py-3 font-medium text-primary-foreground dark:bg-dark-primary dark:text-dark-primary-foreground`,

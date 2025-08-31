@@ -1,4 +1,4 @@
-import { vitePlugin as remix } from '@remix-run/dev'
+import { reactRouter } from '@react-router/dev/vite';
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import { glob } from 'glob'
 import { flatRoutes } from 'remix-flat-routes'
@@ -25,7 +25,7 @@ export default defineConfig({
 	},
 	plugins: [
 		tsconfigPaths(),
-		remix({
+		reactRouter({
 			future: {
 				unstable_optimizeDeps: true,
 				v3_fetcherPersist: true,

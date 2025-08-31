@@ -1,8 +1,18 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "compilerOptions": {
-    "types": ["@remix-run/node", "vite/client"],
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": [
+      "@react-router/node",
+      "vite/client"
+    ],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
@@ -15,8 +25,12 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "~/*": ["./app/*"],
-      "#*": ["./*"],
+      "~/*": [
+        "./app/*"
+      ],
+      "#*": [
+        "./*"
+      ],
       "@/icon-name": [
         "./app/components/atoms/Icon/icons/name.d.ts",
         "./types/icon-name.d.ts"

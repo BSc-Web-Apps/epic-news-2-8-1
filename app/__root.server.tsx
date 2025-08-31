@@ -1,8 +1,8 @@
 import { getUser } from '#server/user.server.js'
 import { parseWithZod } from '@conform-to/zod'
 import { invariantResponse } from '@epic-web/invariant'
-import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
-import { json } from '@remix-run/react'
+import { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router'
+import { data } from 'react-router'
 import { z } from 'zod'
 import { getUserId, logout } from './utils/auth.server'
 import { csrf } from './utils/csrf.server'
@@ -49,7 +49,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 		csrfCookieHeader,
 	})
 
-	return json(pageData, headerData)
+	return data(pageData, headerData)
 }
 
 const ThemeFormSchema = z.object({
@@ -71,5 +71,5 @@ export async function action({ request }: ActionFunctionArgs) {
 	const responseInit = {
 		headers: { 'set-cookie': setTheme(theme) },
 	}
-	return json({ result: submission.reply() }, responseInit)
+	return data({ result: submission.reply() }, responseInit)
 }

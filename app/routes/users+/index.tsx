@@ -1,5 +1,5 @@
-import { json, redirect, type LoaderFunctionArgs } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import { data, redirect, type LoaderFunctionArgs } from 'react-router'
+import { Link, useLoaderData } from 'react-router'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/ErrorBoundary.js'
 import { ErrorList } from '#app/components/forms.tsx'
@@ -41,11 +41,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 	const result = UserSearchResultsSchema.safeParse(rawUsers)
 	if (!result.success) {
-		return json({ status: 'error', error: result.error.message } as const, {
+		return data({ status: 'error', error: result.error.message } as const, {
 			status: 400,
 		})
 	}
-	return json({ status: 'idle', users: result.data } as const)
+	return data({ status: 'idle', users: result.data } as const)
 }
 
 export default function UsersRoute() {

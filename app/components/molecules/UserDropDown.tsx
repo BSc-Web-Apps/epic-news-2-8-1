@@ -1,6 +1,6 @@
 import { getUserImgSrc } from '#app/utils/misc'
 import { useUser } from '#app/utils/user'
-import { useSubmit, Link, Form } from '@remix-run/react'
+import { useSubmit, Link, Form } from 'react-router';
 import { useRef } from 'react'
 import { Button } from '../atoms/Button'
 import {

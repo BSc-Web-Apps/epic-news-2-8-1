@@ -1,4 +1,4 @@
-import { type LinksFunction } from '@remix-run/node'
+import { type LinksFunction } from 'react-router';
 import Document from '~/components/shared-layout/Document'
 import { useNonce } from '~/utils/nonce-provider.ts'
 import rootLinkElements from '~/utils/providers/rootLinkElements'

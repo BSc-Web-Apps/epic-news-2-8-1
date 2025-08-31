@@ -1,4 +1,4 @@
-import { json, redirect, type ActionFunctionArgs } from '@remix-run/node'
+import { data, redirect, type ActionFunctionArgs } from 'react-router'
 import { z } from 'zod'
 import { cache } from '#app/utils/cache.server.ts'
 import { getInstanceInfo } from '#app/utils/litefs.server'
@@ -19,12 +19,12 @@ export async function action({ request }: ActionFunctionArgs) {
 	}
 	const { key, cacheValue } = z
 		.object({ key: z.string(), cacheValue: z.unknown().optional() })
-		.parse(await request.json())
+		.parse(await request.data())
 	if (cacheValue === undefined) {
 		await cache.delete(key)
 	} else {
 		// @ts-expect-error - we don't reliably know the type of cacheValue
 		await cache.set(key, cacheValue)
 	}
-	return json({ success: true })
+	return data({ success: true })
 }

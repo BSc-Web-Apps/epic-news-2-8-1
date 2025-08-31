@@ -1,4 +1,4 @@
-import { useLocation } from '@remix-run/react'
+import { useLocation } from 'react-router';
 import { FiFacebook as Facebook, FiTwitter as Twitter } from 'react-icons/fi'
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
 
